@@ -11,6 +11,10 @@ try:
 except IOError:
     README = CHANGES = ""
 
+install_requires = [
+    "legacy-cgi; python_version >= '3.13'"
+]
+
 testing_extras = [
     "pytest >= 3.1.0",  # >= 3.1.0 so we can use pytest.param
     "coverage",
@@ -32,12 +36,12 @@ setup(
         "Topic :: Internet :: WWW/HTTP :: WSGI",
         "Topic :: Internet :: WWW/HTTP :: WSGI :: Application",
         "Topic :: Internet :: WWW/HTTP :: WSGI :: Middleware",
-        "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
         "Programming Language :: Python :: 3.11",
+        "Programming Language :: Python :: 3.12",
+        "Programming Language :: Python :: 3.13",
         "Programming Language :: Python :: Implementation :: CPython",
         "Programming Language :: Python :: Implementation :: PyPy",
     ],
@@ -51,5 +55,6 @@ setup(
     package_dir={"": "src"},
     python_requires=">=3.7",
     zip_safe=True,
+    install_requires=install_requires,
     extras_require={"testing": testing_extras, "docs": docs_extras},
 )
